@@ -1,0 +1,172 @@
+$first-color: #331010;
+$second-color: #551010;
+$third-color: #771010;
+$fourth-color: #882222;
+$fifth-color: #994444;
+
+.first-color {
+    background-color: $first-color;
+}
+
+.hexagon.second-color {
+    background-color: $second-color;
+
+    &::before {
+        border-bottom-color: $second-color;
+    }
+
+    &::after {
+        border-top-color: $second-color;
+    }
+}
+
+.hexagon.third-color {
+    background-color: $third-color;
+
+    &::before {
+        border-bottom-color: $third-color;
+    }
+
+    &::after {
+        border-top-color: $third-color;
+    }
+}
+
+.hexagon.fourth-color {
+    background-color: $fourth-color;
+
+    &::before {
+        border-bottom-color: $fourth-color;
+    }
+
+    &::after {
+        border-top-color: $fourth-color;
+    }
+}
+
+.hexagon.fifth-color {
+    background-color: $fifth-color;
+
+    &::before {
+        border-bottom-color: $fifth-color;
+    }
+
+    &::after {
+        border-top-color: $fifth-color;
+    }
+}
+
+.hexagon.transparent {
+    background-color: transparent;
+
+    &::before {
+        border-bottom-color: transparent;
+    }
+
+    &::after {
+        border-top-color: transparent;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+.row-3 {
+    display: inline-block;
+    position: relative;
+    left: calc(50% - 75px);
+    top: calc(50% - 50px);
+
+    .row-2 {
+        position: absolute;
+        bottom: 132px;
+        left: 76px;
+
+        .row-1 {
+            position: absolute;
+            bottom: 132px;
+            right: 76px;
+        }
+    }
+
+    .row-4 {
+        position: absolute;
+        top: 132px;
+        right: 76px;
+
+        .row-5 {
+            position: absolute;
+            top: 132px;
+            left: 76px;
+        }
+    }
+}
+.hexagon {
+    width: 150px;
+    height: 100px;
+    box-sizing: border-box;
+    position: absolute;
+
+    &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-bottom: 30px solid $first-color;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        top: -30px;
+    }
+
+    &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-top: 30px solid $first-color;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        bottom: -30px;
+    }
+}
+
+.next {
+    left: calc(100% + 2px);
+}
+
+.previous {
+    right: calc(100% + 2px);
+}
+
+.text {
+    position: absolute;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 6rem;
+    color: white;
+    text-shadow:
+        -1px -1px 1px rgba(255, 255, 255, 0.1),
+        1px 1px 1px rgba(0, 0, 0, 0.5),
+        6px 6px 5px rgba(0, 0, 0, 0.36);
+}
+.text.top {
+    top: calc(50% - 200px);
+    left: calc(50% - 650px);
+}
+.text.middle {
+    top: calc(50% - 90px);
+    left: calc(50% - 150px);
+}
+.text.bottom {
+    bottom: calc(50% - 150px);
+    left: calc(50%);
+}
